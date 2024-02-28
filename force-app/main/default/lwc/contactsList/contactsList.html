@@ -1,0 +1,29 @@
+
+<template>
+    <!-- <div for:each={contacts} for:item="contact" key={contact.id}>
+        <p>{contact.name}</p>
+    </div> -->
+    <section if:true={contacts}>
+        <lightning-combobox
+        name="activeContact"
+        label="Active Contact"
+        value={selectedContactId}
+        options={options}
+        onchange={handleContactChange}
+        variant="label-hidden"
+    ></lightning-combobox>
+    </section>
+
+    <section if:true={emails}>
+        <lightning-combobox
+        name="activeEmail"
+        label="Active Email"
+        value={SelectedEmailId}
+        options={emailOptions}
+        onchange={handleEmailChange}
+        variant="label-hidden"
+    ></lightning-combobox>
+    </section>
+
+    <button onclick={onSendMail}>Send</button>
+</template>
